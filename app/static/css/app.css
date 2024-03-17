@@ -1,3 +1,137 @@
 body {
     padding-top: 5rem;
+    background-color: #f4f4f6;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#form{
+    background-color: white;
+    display: flex;
+    width: auto; 
+    max-width: 700px;
+}
+h1{
+    padding-right: 300px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+
+}
+
+.rooms,.housing{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.t{
+    width: 50%;
+}
+.create-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.property-div{
+
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+   
+}
+
+.images{
+    width: 100%;
+}
+
+.property-link{
+    background-color: #12b9a6;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+   
+}
+
+.property-link a {
+    text-decoration: none;
+    color: white;
+    padding: 8px;
+
+}
+.properties{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+ 
+
+    flex-wrap: wrap;
+
+}
+
+.property-descript{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+}
+
+.property-price{
+    border: 1px;
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.navbar{
+    background-color: #12b9a6;
+}
+
+.location{
+    display: flex;
+    align-items: center;
+    font-weight: 200;
+    font-size: 14px;
+    
+}
+
+.flashes{
+    list-style-type: none;
+    color: white;
+    background-color: green;
+    padding: 12px;
+}
+
+.property-main-img{
+    width: 500px;
+}
+
+.propert-main{
+    border-style: groove;
+    background-color: white;
+}
+
+.email-btn{
+    background-color: #12b9a6;
+}
+
+.email-btn:hover{
+    background-color: #12b9a6;
+    color: black !important;
+}
+
+
+.prop-type{
+    border: 1px;
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    background-color: orange;
 }

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block css %} 
+<link rel="stylesheet" href="{{url_for('static',filename='css/property.css')}}">
+<script href="{{url_for('static',filename='js/property.js')}}"></script>
+{% endblock%}
+
+{% block main  %}
+
+<div class="w-100 d-flex justify-content-center">
+
+    <div class=" w-75 d-flex propert-main" > 
+
+    
+     <div  >
+     <img class="property-main-img" src="{{ url_for('get_image', filename=property.photo_filename) }}" alt="Image of {{ property.title }}" >  
+    </div>
+     <div class="p-3" >
+         <h3>{{property.title}}</h3>
+         <p class="d-flex gap-3"> <span class="property-price bg-primary text-white "> ${{property.price}}</span>          <span class="prop-type">{{property.property_type}}</span></p>
+
+            <p>{{property.description}}</p>
+           
+            
+            <p class="d-flex gap-3"><span><span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 128 128">
+                <path d="M115.621 72.354h-1.99v-3.076a13.151 13.151 0 0 0-11.549-13.032V32.818a6.271 6.271 0 0 0-6.263-6.263H34.511a6.271 6.271 0 0 0-6.263 6.263v23.429A13.15 13.15 0 0 0 16.7 69.278v3.076h-1.99a1.75 1.75 0 0 0-1.75 1.75v13.541a1.751 1.751 0 0 0 1.75 1.75h3.6V99.7a1.75 1.75 0 0 0 1.75 1.75h8.161a1.751 1.751 0 0 0 1.75-1.75V89.4H99.2v10.3a1.75 1.75 0 0 0 1.75 1.75h9.322a1.75 1.75 0 0 0 1.75-1.75V89.4h3.6a1.751 1.751 0 0 0 1.75-1.75V74.1a1.75 1.75 0 0 0-1.751-1.746zM31.748 32.818a2.766 2.766 0 0 1 2.763-2.763h61.308a2.767 2.767 0 0 1 2.763 2.763v23.323h-6.21V42.074a1.75 1.75 0 0 0-1.75-1.75H70.146a1.75 1.75 0 0 0-1.75 1.75v14.067h-6.462V42.074a1.75 1.75 0 0 0-1.75-1.75H39.708a1.75 1.75 0 0 0-1.75 1.75v14.067h-6.21zm57.124 23.323H71.9V43.824h16.972zm-30.438 0H41.458V43.824h16.976zM20.2 69.278a9.648 9.648 0 0 1 9.638-9.637h70.656a9.648 9.648 0 0 1 9.638 9.637v3.076H20.2zm6.269 28.667h-4.662V89.4h4.661zm82.055 0H102.7V89.4h5.822zm5.348-12.05H16.459V75.854h97.412z"/>
+              </svg>
+              </span><span>{{property.bedrooms}} Bedrooms</span></span> <span class="b_room"><span><span><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M29 18.49A2.49 2.49 0 0 0 27.5 14H9a1 1 0 0 0 0 2h18.5a.5.5 0 0 1 0 1 1 1 0 0 0-.5 1.85v4.36A1.79 1.79 0 0 1 25.21 25H6.79A1.79 1.79 0 0 1 5 23.21V19h19a1 1 0 0 0 0-2H4.5a.5.5 0 0 1 0-1H5a1 1 0 0 0 1-1V4h2.3a.7.7 0 0 1 .49.2l.88.89a4 4 0 0 0-.28 5.1L10 11a1 1 0 0 0 .8.4 1 1 0 0 0 .6-.2l4.8-3.59a1 1 0 0 0 .39-.61 1 1 0 0 0-.19-.74l-.6-.8a4 4 0 0 0-2.63-1.57 4 4 0 0 0-1.76.11L10.2 2.79A2.7 2.7 0 0 0 8.3 2H6a2 2 0 0 0-2 2v10a2.49 2.49 0 0 0-1 4.44v4.72a3.77 3.77 0 0 0 .64 2.1 1.09 1.09 0 0 0-.27.45L3.07 27a2.46 2.46 0 0 0 4.77 1.19L8.12 27h15.76l.28 1.14A2.46 2.46 0 0 0 28.93 27l-.3-1.19a1.09 1.09 0 0 0-.27-.45 3.77 3.77 0 0 0 .64-2.1zM12.59 5.8h.3a2 2 0 0 1 1.31.79L11 9a2 2 0 0 1 1.6-3.2zM5.46 28a.43.43 0 0 1-.36-.18.46.46 0 0 1-.1-.39l.2-.78a4.21 4.21 0 0 0 .87.28l-.18.73a.45.45 0 0 1-.43.34zm21.44-.18a.43.43 0 0 1-.36.18.45.45 0 0 1-.44-.34l-.18-.73a4.21 4.21 0 0 0 .87-.28l.2.78a.46.46 0 0 1-.09.39z" style="fill:#231f20"/></svg></span></span>{{property.bathrooms}} Bathrooms</span></p>
+           
+            <p><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+              </svg></span> {{ property.location }} </p>
+            
+            <button class="btn text-white email-btn">Email Realtor</button>
+            
+     </div>
+     
+    </div>
+</div>
+
+{% endblock %}

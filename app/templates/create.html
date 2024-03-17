@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+<div class="create-form">
+<h1>Add New Property</h1>
+<div class="add" id="form">
+
+
+    <form action="{{ url_for('create') }}" enctype="multipart/form-data" method="POST">
+        {{ form.csrf_token }}
+
+        <div class="title">
+            <h6>{{ form.title.label }}</h6>
+            {{ form.title(required='required',size=60) }}
+        </div>
+
+        <div class="">
+            <h6>{{ form.description.label }} </h6>
+            {{ form.description(required='required',cols=62,rows=6) }}
+
+        </div>
+        <div class="rooms">
+            <div class="t">
+                <h6>{{ form.bedrooms.label }}</h6>
+                {{ form.bedrooms(required='required',size=60, placeholder="2") }}
+            </div>
+
+            <div class="t">
+                <h6>{{ form.bathrooms.label }} </h6>
+                {{
+                form.bathrooms(required='required',size=60, placeholder="2") }}
+
+            </div>
+        </div>
+        <div class="">
+
+
+        </div>
+
+        <div class="housing">
+        <div class="t">
+           <h6> {{ form.price.label }} </h6>
+            {{ form.price(required='required',size=50,placeholder="15,000,000") }}
+        </div>
+
+        <div class="t">
+            
+            <h6>{{ form.property_type.label }}</h6>
+
+            {{form.property_type(required='required',size=1) }}
+        </div>
+    </div>
+        <div class="t">
+            <h6>{{ form.location.label }}</h6>
+            {{ form.location(required='required',size=60,placeholder="10 Waterloo Rd") }}
+        </div>
+
+
+
+        <div class="">
+            <h6>{{ form.photo.label }}</h6>
+            {{form.photo(class="upload")}}
+        </div>
+
+        <button class="btn bg-primary text-white w-25" type="submit">Add Property</button>
+
+    </form>
+</div></div>
+{% endblock %}
